@@ -27,16 +27,8 @@ class _EditPageState extends State<EditPage> {
     textEditingControllerRate.text=widget.contact.rate;
     textEditingControllerTotal.text=widget.contact.total;
 
-
-
-    return MaterialApp(
-      theme: ThemeData(
-        //primaryColor: Color(0xFF12a644),
-          primaryColor: Colors.cyanAccent[100]
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.lime[50],
+    return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text("Save Due",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
         ),
@@ -51,25 +43,18 @@ class _EditPageState extends State<EditPage> {
                   height: 25.0,
                 ),
 
-                /*TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: "Rate(TK)",hintStyle: TextStyle(
-                    color: Colors.greenAccent[400], // <-- Change this
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  ),
-                  controller: textEditingControllerRate,
-                ),*/
 
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: "Add Due(TK)",
+                    labelText: "Add Due(TK)",labelStyle: TextStyle(
+                  color: Colors.lightBlue, // <-- Change this
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Add Due(TK)",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -129,7 +114,6 @@ class _EditPageState extends State<EditPage> {
             ),
           ),
         ),
-      ),
     );
   }
 }

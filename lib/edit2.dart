@@ -30,13 +30,7 @@ class _EditPageState extends State<EditPage2> {
 
 
 
-    return MaterialApp(
-      theme: ThemeData(
-        //primaryColor: Color(0xFF12a644),
-          primaryColor: Colors.indigo[50]
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.lime[50],
         appBar: AppBar(
           title: Text("Collection",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
@@ -56,9 +50,14 @@ class _EditPageState extends State<EditPage2> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: "Collect(TK)",
+                    labelText: "Collect(TK)",labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Collect(TK)",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -125,7 +124,7 @@ class _EditPageState extends State<EditPage2> {
             ),
           ),
         ),
-      ),
+
     );
   }
 }

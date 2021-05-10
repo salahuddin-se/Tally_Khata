@@ -28,14 +28,8 @@ class _EditPageState3 extends State<EditPage3> {
 
 
 
-    return MaterialApp(
-      theme: ThemeData(
-          primaryColor: Colors.cyan[600]
-          //primaryColor: Colors.indigo[50]
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          backgroundColor: Colors.indigo[50],
+    return Scaffold(
+          backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text("Edit Contact",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
         ),
@@ -53,9 +47,14 @@ class _EditPageState3 extends State<EditPage3> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Name',
+                    labelText: 'Name',labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Name",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -71,9 +70,14 @@ class _EditPageState3 extends State<EditPage3> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Address',
+                    labelText: 'Address',labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Address",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -87,9 +91,14 @@ class _EditPageState3 extends State<EditPage3> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Phone',
+                    labelText: 'Phone',labelStyle:TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Phone",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -109,30 +118,36 @@ class _EditPageState3 extends State<EditPage3> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(right:20.0),
-                      child: RaisedButton(
-                        child: Text("Save",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
-                        onPressed: () async {
+                      child: Container(
+                        child: RaisedButton(
+                          color: Colors.lightBlueAccent,
+                          child: Text("Save",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
+                          onPressed: () async {
 
 
-                          widget.contact.name=textEditingControllerName.text;
-                          widget.contact.village=textEditingControllerVillage.text;
-                          widget.contact.phone=textEditingControllerPhone.text;
+                            widget.contact.name=textEditingControllerName.text;
+                            widget.contact.village=textEditingControllerVillage.text;
+                            widget.contact.phone=textEditingControllerPhone.text;
 
 
-                          var db = DatabaseHelper();
-                          await db.update(widget.contact);
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp2()));
-                        },
+                            var db = DatabaseHelper();
+                            await db.update(widget.contact);
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp2()));
+                          },
+                        ),
                       ),
                     ),
                     //Padding(padding: EdgeInsets.only(left: 5,right: 5)),
                     Padding(
                       padding: const EdgeInsets.only(right:20.0),
-                      child: RaisedButton(
-                        child: Text("Cancel",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp2()));
-                        },
+                      child: Container(
+                        child: RaisedButton(
+                          color: Colors.lightBlueAccent,
+                          child: Text("Cancel",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp2()));
+                          },
+                        ),
                       ),
                     ),
 
@@ -142,7 +157,6 @@ class _EditPageState3 extends State<EditPage3> {
             ),
           ),
         ),
-      ),
     );
   }
 

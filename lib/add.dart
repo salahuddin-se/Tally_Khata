@@ -25,16 +25,8 @@ class _AddPageState extends State<AddPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        //primaryColor: Color(0xFF12a644),
-          primaryColor: Colors.cyan[600]
-
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        //backgroundColor: Colors.lime[50],
-        backgroundColor: Colors.cyan[50],
+    return Scaffold(
+        backgroundColor:Colors.white ,
         appBar: AppBar(
           title: Text("Add Contact",style: TextStyle(fontSize: 23,color: Colors.black,fontWeight: FontWeight.bold)),
         ),
@@ -52,9 +44,14 @@ class _AddPageState extends State<AddPage> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Customer Name',
+                    labelText: 'Customer Name',labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Customer's Name",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -71,9 +68,14 @@ class _AddPageState extends State<AddPage> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Address',
+                    labelText: 'Address',labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Address",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -88,9 +90,14 @@ class _AddPageState extends State<AddPage> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Phone',
+                    labelText: 'Phone',labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Phone",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -105,9 +112,14 @@ class _AddPageState extends State<AddPage> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Add Due (Tk)',
+                    labelText: 'Add Due (Tk)',labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Add Due (Tk)",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -126,9 +138,14 @@ class _AddPageState extends State<AddPage> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: "Collection(TK)",
+                    labelText: "Collection(TK)",labelStyle: TextStyle(
+                    color: Colors.lightBlue, // <-- Change this
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                  ),
                     hintText: "Collection(TK)",hintStyle: TextStyle(
-                    color: Colors.black, // <-- Change this
+                    color: Colors.lightBlue, // <-- Change this
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
@@ -161,8 +178,8 @@ class _AddPageState extends State<AddPage> {
                     Expanded(
                       child: Container(
                         height: 50.0,
-                        color: Colors.cyan[600],
                         child: RaisedButton(
+                          color: Colors.lightBlueAccent[100],
                           child: Text("Save",style: TextStyle(fontSize: 24,color: Colors.black,fontWeight: FontWeight.bold)),
                           onPressed: () async {
 
@@ -187,8 +204,8 @@ class _AddPageState extends State<AddPage> {
                     Expanded(
                         child: Container(
                           height: 50.0,
-                          color: Colors.cyan[600],
                           child: RaisedButton(
+                            color: Colors.lightBlueAccent[100],
                             child: Text("Cancel",style: TextStyle(fontSize: 24,color: Colors.black,fontWeight: FontWeight.bold)),
                             onPressed: (){
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Dash()));
@@ -203,7 +220,7 @@ class _AddPageState extends State<AddPage> {
             ),
           ),
         ),
-      ),
+
     );
   }
 }

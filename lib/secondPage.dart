@@ -9,19 +9,12 @@ class MyApp2 extends StatelessWidget {
   final navigatorKey= GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-          //primaryColor: Color(0xFF12a644),
-            primaryColor: Colors.cyan[600]
-        ),
-        debugShowCheckedModeBanner: false,
-        navigatorKey: navigatorKey,
-        home:Scaffold(
+    return Scaffold(
           appBar: AppBar(
             title: Text("List Of Members",style: TextStyle(fontSize: 22,color: Colors.black,fontWeight: FontWeight.bold)),
           ),
           body: MyHomePage(),
-        )
+
     );
   }
 }
@@ -43,6 +36,20 @@ class MyHomePage extends StatelessWidget {
                   Contact contact = Contact.fromJson(snapshot.data[index]);
 
                   return Padding(
+                    padding: const EdgeInsets.fromLTRB(20,8,20,8),
+                    child: Card(
+                      color: Colors.black,
+                      child: ListTile(
+                        title: Text(contact.name,style: TextStyle(fontWeight: FontWeight.bold,color:Colors.white,fontSize: 21.0)),
+                        subtitle: Text(contact.phone,style: TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color: Colors.white )),
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ContactDetailsPage(contact: contact,)));
+                        },
+                      ),
+                    ),
+                  );
+
+                  /*return Padding(
                     padding: const EdgeInsets.fromLTRB(20,10,20,10),
                     child: Card(
                       color: Colors.greenAccent[100],
@@ -54,7 +61,9 @@ class MyHomePage extends StatelessWidget {
                         },
                       ),
                     ),
-                  );
+                  );*/
+
+
                 });
           }
           else{

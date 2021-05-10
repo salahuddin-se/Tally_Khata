@@ -1,4 +1,3 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:tallykhata/details.dart';
 import 'helpers/database_helper.dart';
@@ -14,19 +13,12 @@ class CalTot extends StatelessWidget {
   final navigatorKey= GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-          //primaryColor: Color(0xFF12a644),
-            primaryColor: Colors.cyan[600]
-        ),
-        debugShowCheckedModeBanner: false,
-        navigatorKey: navigatorKey,
-        home:Scaffold(
+    return Scaffold(
           appBar: AppBar(
             title: Text("Due List",style: TextStyle(fontSize: 22,color: Colors.black,fontWeight: FontWeight.bold)),
           ),
           body: TotPage(),
-        )
+
     );
   }
 }
@@ -55,26 +47,33 @@ class TotPage extends StatelessWidget {
 
                       return Padding(
                         padding: const EdgeInsets.fromLTRB(15,10,20,10),
-                        child: Row(
+                        child: Column(
                           children: [
+                            Row(
+                              children: [
 
-                            Text(("${contact.name} = "), style: TextStyle(fontWeight: FontWeight.bold,color:Colors.teal[600],fontSize: 21.0)),
-                            Text("${contact.rate} Tk", style: TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color: Colors.black )),
-                            /*Card(
-                              color: Colors.greenAccent[100],
-                              child: ListTile(
-                                title: Text(contact.name,style: TextStyle(fontWeight: FontWeight.bold,color:Colors.teal[600],fontSize: 21.0)),
-                                subtitle: Text(contact.rate,style: TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color: Colors.black )),
+                                Text(("${contact.name} = "), style: TextStyle(fontWeight: FontWeight.bold,color:Colors.lightBlueAccent[400],fontSize: 21.0)),
+                                Text("${contact.due} Tk", style: TextStyle(fontWeight: FontWeight.bold,fontSize:21.0,color: Colors.black )),
+                                /*Card(
+                                  color: Colors.greenAccent[100],
+                                  child: ListTile(
+                                    title: Text(contact.name,style: TextStyle(fontWeight: FontWeight.bold,color:Colors.teal[600],fontSize: 21.0)),
+                                    subtitle: Text(contact.rate,style: TextStyle(fontWeight: FontWeight.bold,fontSize:17.0,color: Colors.black )),
 
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ContactDetailsPage(contact: contact,)));
-                                },
-                              ),
-                            ),*/
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ContactDetailsPage(contact: contact,)));
+                                    },
+                                  ),
+                                ),*/
 
-                            Text(contact.rate)
+                                //Text(("${contact.name} = "), style: TextStyle(fontWeight: FontWeight.bold,color:Colors.lightBlueAccent[400],fontSize: 21.0)),
+                                //Text("${contact.rate} Tk", style: TextStyle(fontWeight: FontWeight.bold,fontSize:21.0,color: Colors.black )),
 
-                          ]
+                                //Text(contact.rate)
+
+                              ]
+                            ),
+                          ],
                         ),
 
 
@@ -93,4 +92,4 @@ class TotPage extends StatelessWidget {
     );
   }
 }
-*/
+

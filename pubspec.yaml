@@ -22,8 +22,13 @@ environment:
 
 dependencies:
   get:
+  carousel_pro:
+  native_video_view:
+  video_player: ^0.5.1
   shared_preferences: ^0.5.6+2
   sqflite: ^1.2.0
+  flutter_launcher_icons: 0.7.2+1
+  flutter_launcher_name: 0.0.1
   flutter:
     sdk: flutter
 
@@ -36,6 +41,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/tally3.jpg"
+
+flutter_launcher_name:
+  name: "Tally-Khata"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -48,11 +60,16 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/videos/intro.mp4
     - images/pict1.jpg
     - images/add_people_icon.jpg
     - images/pict2.jpg
     - images/pic3.jpg
     - images/pic4.jpg
+    - images/tally1.png
+    - images/tally2.jpg
+    - images/tally3.jpg
+    - images/tally4.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
